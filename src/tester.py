@@ -9,6 +9,6 @@ PARENT_DIR = os.path.dirname(THIS_DIR)
 suite = unittest.defaultTestLoader.discover(TEST_LOCATION)
 
 if __name__ == '__main__':
-    with open(PARENT_DIR+'/results.xml', 'wb') as outfile:
+    with open(PARENT_DIR+'/logs/results.xml', 'wb') as outfile:
         runner = xmlrunner.XMLTestRunner(output=outfile)
         runner.run(suite)
