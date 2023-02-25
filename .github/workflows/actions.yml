@@ -1,0 +1,26 @@
+Name: GitHub Actions Practice Task
+run-name: ${{ github.actor }} is using GitHub Actions to test and build a Python program.
+on: [push]
+jobs:
+  Test-and-build-modules:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+    - name: Test with unittest
+      run: |
+        pip install -U unittest-xml-reporting
+        python src/tests/tester.py
+    - name: Build modules
+      run: |
+        pip install -U pyinstaller
+        pyinstaller src/solver_add.py
+        pyinstaller src/solver_subtract.py
+      
+        
