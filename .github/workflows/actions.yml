@@ -20,10 +20,10 @@ jobs:
         python -m pip install --upgrade pip
         
     - name: Test with unittest
-      continue-on-error: false
       run: |
         pip install -U unittest-xml-reporting
         python src/tester.py
+        echo $?
         
     - name: Build modules
       run: |
