@@ -8,5 +8,6 @@ TEST_LOCATION = THIS_DIR + '/tests'
 suite = unittest.defaultTestLoader.discover(TEST_LOCATION)
 
 if __name__ == '__main__':
-    runner = xmlrunner.XMLTestRunner(output='test-reports')
-    runner.run(suite)
+    with open(THIS_DIR+'/results.xml', 'wb') as outfile:
+        runner = xmlrunner.XMLTestRunner(output=outfile)
+        runner.run(suite)
