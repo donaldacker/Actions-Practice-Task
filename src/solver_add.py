@@ -15,7 +15,7 @@ def _parse_args():
 
 def solve(param1, param2):
     """ Dummy solve that just adds two numbers and returns the result. """
-    return param1 + param2
+    return param1 * param2
 
 if __name__ == "__main__":
     arguments = _parse_args()
