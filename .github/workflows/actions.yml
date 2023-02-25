@@ -32,4 +32,7 @@ jobs:
         name: solver_add
         path: dist/solver_add
 
+    - name: Test artifact
+      run: |
+        ./dist/solver_add 6 7 | echo
         
