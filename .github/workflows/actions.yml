@@ -1,5 +1,5 @@
-Name: GitHub Actions Practice Task
-run-name: ${{ github.actor }} is using GitHub Actions to test and build a Python program.
+name: GitHub Actions Practice Task
+run-name: ${{ github.actor }} is testing and building Python modules
 on: [push]
 jobs:
   Test-and-build-modules:
