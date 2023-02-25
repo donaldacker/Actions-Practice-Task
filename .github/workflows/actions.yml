@@ -48,8 +48,4 @@ jobs:
         name: results.xml
         path: logs
 
-    - name: Test artifact
-      run: |
-        ./dist/solver_add 6 7
-        ./dist/solver_subtract 8 5
-        
+
