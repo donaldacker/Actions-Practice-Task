@@ -16,7 +16,7 @@ jobs:
     - name: Test with unittest
       run: |
         pip install -U unittest-xml-reporting
-        python src/tests/tester.py
+        python src/tester.py
     - name: Build modules
       run: |
         pip install -U pyinstaller
