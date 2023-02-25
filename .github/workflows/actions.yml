@@ -26,7 +26,7 @@ jobs:
         
     - name: Upload artifact results.xml
       if: success() || failure()
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with: 
         name: results.xml
         path: logs
@@ -38,13 +38,13 @@ jobs:
         pyinstaller --onefile src/solver_subtract.py
         
     - name: Upload artifact solver_add
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with: 
         name: solver_add
         path: dist/solver_add
         
     - name: Upload artifact solver_subtract
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with: 
         name: solver_subtract
         path: dist/solver_subtract
