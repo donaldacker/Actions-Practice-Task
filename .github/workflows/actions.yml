@@ -29,15 +29,7 @@ jobs:
     - name: Upload artifact solver_add
       uses: actions/upload-artifact@v2
       with: 
-        name: dist/solver_add/solver_add
-        path: dist
-    - name: Upload artifact solver_subtract
-      uses: actions/upload-artifact@v2
-      with: 
-        name: dist/solver_subtract/solver_subtract
-        path: dist
-    - name: Upload test results
-      uses: actions/upload-artifact@v2
-      with:
-        name: results.xml
+        name: solver_add
+        path: dist/solver_add/solver_add
+
         
