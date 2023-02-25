@@ -1,5 +1,6 @@
 import unittest
 import os
+import sys
 import xmlrunner
 
 THIS_DIR = os.path.dirname(__file__)
@@ -11,4 +12,6 @@ suite = unittest.defaultTestLoader.discover(TEST_LOCATION)
 if __name__ == '__main__':
     with open(PARENT_DIR+'/logs/results.xml', 'wb') as outfile:
         runner = xmlrunner.XMLTestRunner(output=outfile)
-        runner.run(suite)
+        # xmlrunner doesn't set the right exit code: must do this manually.
+        ret = not runner.run(suite).wasSuccessful()
+        sys.exit(ret)
