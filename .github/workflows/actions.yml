@@ -11,6 +11,10 @@ jobs:
       with:
         python-version: '3.x'
         
+    - name: Create temporary directories
+      run: |
+        mkdir logs
+        
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -31,8 +35,21 @@ jobs:
       with: 
         name: solver_add
         path: dist/solver_add
+        
+    - name: Upload artifact solver_subtract
+      uses: actions/upload-artifact@v2
+      with: 
+        name: solver_subtract
+        path: dist/solver_subtract
+        
+    - name: Upload artifact results.xml
+      uses: actions/upload-artifact@v2
+      with: 
+        name: results.xml
+        path: logs
 
     - name: Test artifact
       run: |
         ./dist/solver_add 6 7
+        ./dist/solver_subtract 8 5
         
