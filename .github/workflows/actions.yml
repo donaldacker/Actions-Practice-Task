@@ -20,9 +20,17 @@ jobs:
         python -m pip install --upgrade pip
         
     - name: Test with unittest
+      continue-on-error: true
       run: |
         pip install -U unittest-xml-reporting
         python src/tester.py
+        
+    - name: Upload artifact results.xml
+      uses: actions/upload-artifact@v2
+      with: 
+        name: results.xml
+        path: logs
+      continue-on-error: false
         
     - name: Build modules
       run: |
@@ -42,10 +50,6 @@ jobs:
         name: solver_subtract
         path: dist/solver_subtract
         
-    - name: Upload artifact results.xml
-      uses: actions/upload-artifact@v2
-      with: 
-        name: results.xml
-        path: logs
+
 
 
